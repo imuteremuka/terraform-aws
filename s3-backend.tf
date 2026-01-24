@@ -1,12 +1,3 @@
-variable "bucket_name" {
-      type        = string
-      description = "My variable used to set bucket name"
-      default     = "terraform-state-bucket"
-    }
-
-locals {
-      local_example = "This is a local variable"
-    }
 
 resource "random_id" "bucket_suffix" {
       byte_length = 6
