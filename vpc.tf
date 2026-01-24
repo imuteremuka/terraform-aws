@@ -10,14 +10,24 @@ resource "aws_vpc" "im_demo_vpc" {
 resource "aws_subnet" "public_subnet" {
   vpc_id     = aws_vpc.im_demo_vpc.id
   cidr_block = "10.0.0.0/24"
+  tags = {
+    name = "public-sub-terraform"
+  }
 }
 
 resource "aws_subnet" "private_subnet" {
   vpc_id     = aws_vpc.im_demo_vpc.id
   cidr_block = "10.0.1.0/24"
+  tags = {
+    name = "private-sub-terraform"
+  }
 }
 resource "aws_internet_gateway" "igw" {
   vpc_id = aws_vpc.im_demo_vpc.id
+
+  tags = {
+    Name = "Terraform IGW"
+  }
 }
 resource "aws_route_table" "public_rtb" {
   vpc_id = aws_vpc.im_demo_vpc.id
@@ -25,6 +35,8 @@ resource "aws_route_table" "public_rtb" {
   route {
     cidr_block = "0.0.0.0/0"
     gateway_id = aws_internet_gateway.igw.id
+
+
   }
 }
 resource "aws_route_table_association" "public_subnet" {

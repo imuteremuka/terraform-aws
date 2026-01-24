@@ -10,6 +10,12 @@ terraform {
       version = "~> 3.0"
     }
   }
+  backend "s3" {
+    bucket = "s3proj-terraform-backend"
+    key    = "global/s3proj/state.tfstate"
+    region = "af-south-1"
+
+  }
 }
 
 provider "aws" {
