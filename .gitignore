@@ -1,0 +1,22 @@
+.env
+# Local .terraform directories (modules, providers, plugins)
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+*.tfvars
+*.tfvars.json
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+*.tfplan
+crash.log
+crash.*.log
+.terraformrc
+terraform.rc
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.log
+.terraform/
