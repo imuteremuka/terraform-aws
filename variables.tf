@@ -12,7 +12,10 @@ variable "aws_region" {
 
 
 locals {
-  local_example = "This is a local variable"
+  common_tags = {
+    Project   = "TerraformLearning"
+    ManagedBy = "Terraform"
+  }
 }
 
 variable "environment" {
