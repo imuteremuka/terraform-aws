@@ -52,17 +52,17 @@ resource "aws_s3_bucket_website_configuration" "im-s3-backend-website" {
 }
 
 resource "aws_s3_object" "index" {
-  bucket = aws_s3_bucket.im-s3-backend.id
-  key    = "index.html"
-  source = "build/index.html"
-  etag   = filemd5("build/index.html")
+  bucket       = aws_s3_bucket.im-s3-backend.id
+  key          = "index.html"
+  source       = "build/index.html"
+  etag         = filemd5("build/index.html")
   content_type = "text/html"
 }
 
 resource "aws_s3_object" "error" {
-  bucket = aws_s3_bucket.im-s3-backend.id
-  key    = "error.html"
-  source = "build/error.html"
-  etag   = filemd5("build/error.html")
+  bucket       = aws_s3_bucket.im-s3-backend.id
+  key          = "error.html"
+  source       = "build/error.html"
+  etag         = filemd5("build/error.html")
   content_type = "text/html"
 }
