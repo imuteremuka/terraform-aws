@@ -1,20 +1,18 @@
 terraform {
-  required_version = "~>1.1"
+  required_version = "~>1.6"
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "~>6.2"
+      version = "~> 6.5"
     }
   }
   backend "s3" {
-    bucket = "s3proj-terraform-backend"
-    key    = "global/s3proj/state.tfstate"
-    region = "af-south-1"
+    bucket = "terraform-backend123"
+    key    = "terraformproj/state.tfstae"
   }
-
 }
 
 provider "aws" {
-  region = var.aws_region
+  region = "var.aws_region"
 
 }

@@ -23,3 +23,27 @@ variable "environment" {
   description = "The environment for the resources"
   default     = "dev"
 }
+
+variable "ec2_instance_type" {
+    type        = string
+    description = "The type of EC2 instance to create"
+    default     = "t2.micro"
+
+    validation {
+      condition = contains(["t2.micro", "t3.micro" ], var.ec2_instance_type)
+      error_message = "Only support t2 or t3 micros"
+    }
+
+    
+}
+
+variable "ec2_volume_config" {
+  type = object({
+    size = number
+    type = string
+  })
+  default = {
+    size = 10
+    type = "gp3"
+  }
+}
