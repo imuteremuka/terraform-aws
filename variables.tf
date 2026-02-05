@@ -25,16 +25,16 @@ variable "environment" {
 }
 
 variable "ec2_instance_type" {
-    type        = string
-    description = "The type of EC2 instance to create"
-    default     = "t2.micro"
+  type        = string
+  description = "The type of EC2 instance to create"
+  default     = "t2.micro"
 
-    validation {
-      condition = contains(["t2.micro", "t3.micro" ], var.ec2_instance_type)
-      error_message = "Only support t2 or t3 micros"
-    }
+  validation {
+    condition     = contains(["t2.micro", "t3.micro"], var.ec2_instance_type)
+    error_message = "Only support t2 or t3 micros"
+  }
 
-    
+
 }
 
 variable "ec2_volume_config" {
@@ -46,4 +46,11 @@ variable "ec2_volume_config" {
     size = 10
     type = "gp3"
   }
+}
+
+locals {
+  math       = 2 * 2
+  equality   = 2 != 2
+  comparison = 2 < 1
+  logical    = true || false
 }
