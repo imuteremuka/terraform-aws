@@ -1,4 +1,4 @@
-locals{
-    project = "11-multiple-projects"
+locals {
+  project = "11-multiple-projects"
 
 }
