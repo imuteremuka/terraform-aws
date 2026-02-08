@@ -10,3 +10,15 @@ variable "bucket-name" {
     default     = "terraform-s3-bucket-im"
   
 }
+
+variable "subnet-count" {
+    description = "The number of subnets to create."
+    type        = number
+    default     = 2
+}
+
+variable "ec2_instance_count" {
+    description = "The number of EC2 instances to create."
+    type        = number
+    default     = 2
+}
