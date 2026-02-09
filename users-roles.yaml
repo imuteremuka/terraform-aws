@@ -1,0 +1,7 @@
+users:
+  - name: Alice
+    role: [read-only, admin]
+  - name: Bob
+    role: [read-only]
+  - name: Charlie
+    role: [admin]
