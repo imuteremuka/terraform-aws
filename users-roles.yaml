@@ -2,6 +2,6 @@ users:
   - name: Alice
     role: [read-only, admin]
   - name: Bob
-    role: [read-only]
+    role: [read-only, developer, admin]
   - name: Charlie
-    role: [admin]
+    role: [admin, auditor]
