@@ -14,6 +14,3 @@ output "policies" {
 
 }
 
-output "flatten_users" {
-  value = local.flattened_users_map
-}
